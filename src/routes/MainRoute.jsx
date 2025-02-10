@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Navbar, Sidebar } from "../components";
-import { About, Home } from "../containers";
+import { About, Home, Users } from "../containers";
+
 
 const MainRoute = () => {
   return (
@@ -11,10 +12,11 @@ const MainRoute = () => {
 
       <div className=" w-[85vw] pl-6">
         <Navbar />
-        <div className=" mt-6 border-2 border-red-900">
+        <div className=" mt-6 ">
           <Routes>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
+            <Route path="users" element={<Users />} />
           </Routes>
         </div>
       </div>

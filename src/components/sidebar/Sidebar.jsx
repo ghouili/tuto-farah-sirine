@@ -1,5 +1,5 @@
-import { House, Info, Send } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { House, Info, Send, Users } from "lucide-react";
+import { useLocation, Link } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -18,7 +18,8 @@ const Sidebar = () => {
       </div>
 
       <div className="flex flex-col gap-4 text-gray-900">
-        <div
+        <Link
+          to="/"
           className={`  flex flex-row items-center text-sm font-semibold gap-2 p-1.5 rounded-md cursor-pointer transition-all ease-in-out duration-100 ${
             location.pathname === "/"
               ? "border-0 shadow  -translate-y-1 hover:border hover:shadow-none hover:translate-0   hover:text-gray-900 text-blue-500"
@@ -27,7 +28,19 @@ const Sidebar = () => {
         >
           <House size={18} />
           <span>Home</span>
-        </div>
+        </Link>
+
+        <Link
+          to="/users"
+          className={`  flex flex-row items-center text-sm font-semibold gap-2 p-1.5 rounded-md cursor-pointer transition-all ease-in-out duration-100 ${
+            location.pathname === "/users"
+              ? "border-0 shadow  -translate-y-1 hover:border hover:shadow-none hover:translate-0   hover:text-gray-900 text-blue-500"
+              : "border hover:border-0 hover:shadow hover:-translate-y-1 hover:text-blue-500  "
+          }   `}
+        >
+          <Users size={18} />
+          <span>Users</span>
+        </Link>
 
         <div
           className={`  flex flex-row items-center text-sm font-semibold gap-2 p-1.5 rounded-md cursor-pointer transition-all ease-in-out duration-100 ${
